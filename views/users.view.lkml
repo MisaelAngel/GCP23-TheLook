@@ -60,7 +60,10 @@ view: users {
 
   dimension: state {
     type: string
-    sql: ${TABLE}.state ;;
+    sql: concat(" Backslash ", "/ ", ${TABLE}.state, "'s ") ;;
+    # sql: {% if ${TABLE}.state == "California" %}
+    #         concat(" Backslash ", "/ ", ${TABLE}.state, "'s ")
+    # # {% else %} concat(" Backslash ", "/ ", ${TABLE}.state){% endif %};;
   }
 
   dimension: zip {
