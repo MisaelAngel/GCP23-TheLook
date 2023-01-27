@@ -16,6 +16,7 @@ view: users {
   dimension: city {
     type: string
     sql: ${TABLE}.city ;;
+    tags: ["test_tag"]
   }
 
   dimension: country {
@@ -60,10 +61,8 @@ view: users {
 
   dimension: state {
     type: string
-    sql: concat(" Backslash ", "/ ", ${TABLE}.state, "'s ") ;;
-    # sql: {% if ${TABLE}.state == "California" %}
-    #         concat(" Backslash ", "/ ", ${TABLE}.state, "'s ")
-    # # {% else %} concat(" Backslash ", "/ ", ${TABLE}.state){% endif %};;
+    sql: concat("Backslash \\ \' ",${TABLE}.state) ;;
+    #html: <p>{{value}}</p> ;;
   }
 
   dimension: zip {
@@ -79,6 +78,11 @@ view: users {
   measure: count {
     type: count
     drill_fields: [detail*]
+  }
+
+  measure: test {
+    type: number
+    sql: ${age} ;;
   }
 
   # ----- Sets of fields for drilling ------

@@ -263,3 +263,11 @@ explore: xss_test_7 {}
 explore: xss_test_8 {}
 
 explore: xss_test_9 {}
+# Place in `mtrmisathelook` model
+explore: +users {
+    query: users_count_by_state{
+      dimensions: [state]
+      measures: [count]
+      timezone: "America/Los_Angeles"
+    }
+}

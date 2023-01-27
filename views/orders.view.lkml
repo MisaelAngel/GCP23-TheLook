@@ -25,6 +25,7 @@ view: orders {
   dimension: status {
     type: string
     sql: ${TABLE}.status ;;
+    tags: ["test_tag","2_test_tag"]
   }
 
   dimension: user_id {
