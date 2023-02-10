@@ -61,8 +61,9 @@ view: users {
 
   dimension: state {
     type: string
-    sql: concat("Backslash \&#92; ",${TABLE}.state, "'s") ;;
-    html: <p>{{filterable_value}}</p> ;;
+    sql: ${TABLE}.state ;;
+    # sql: concat("Backslash \&#92; ",${TABLE}.state, "'s") ;;
+    # html: <p>{{filterable_value}}</p> ;;
   }
 
   dimension: backslash_state {

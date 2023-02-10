@@ -5,12 +5,14 @@ connection: "thelook"
 include: "/views/**/*.view"
 
 datagroup: mtrmisathelook_default_datagroup {
-  # sql_trigger: SELECT MAX(id) FROM etl_log;;
+  sql_trigger: SELECT MAX(id) FROM users;;
   max_cache_age: "1 hour"
 }
 
 persist_with: mtrmisathelook_default_datagroup
 
+explore: ndt_test {}
+explore: ndt_test_2 {}
 #explore: div_stylebackgroundimage_urldatatexthtmlimgsrc1 {}
 
 explore: imgsrc1onerroralert2 {}

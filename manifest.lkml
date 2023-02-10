@@ -6,7 +6,7 @@ project_name: "mtrmisathelook"
 # local_dependency: {
 #   project: "name_of_other_project"
 # }
-# remote_dependency: mtrmisathelook {
-#   url: "git@github.com:MisaelAngel/GCP23-TheLook.git"
-#   ref: "master"
-# }
+remote_dependency: mtrmisathelook {
+  url: "git@github.com:MisaelAngel/GCP23-TheLook.git"
+  ref: "test_test"
+}
