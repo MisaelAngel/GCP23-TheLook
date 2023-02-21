@@ -61,9 +61,13 @@ view: users {
 
   dimension: state {
     type: string
-    sql: ${TABLE}.state ;;
+    # sql: ${TABLE}.state ;;
+    # link: {
+    #   label: "Filter by"
+    # }
+    sql: concat("Backslash \\ ",${TABLE}.state, "'s") ;;
     # sql: concat("Backslash \&#92; ",${TABLE}.state, "'s") ;;
-    # html: <p>{{filterable_value}}</p> ;;
+    # html: <p>{{value}}</p> ;;
   }
 
   dimension: backslash_state {
@@ -85,6 +89,9 @@ view: users {
   measure: count {
     type: count
     drill_fields: [detail*]
+    html: {% if users.gender._value == "m" %}
+            <p style="color:#FF0000";>{{rendered_value}}</p>
+          {%endif%};;
   }
 
   measure: test {
