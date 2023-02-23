@@ -94,9 +94,18 @@ view: users {
           {%endif%};;
   }
 
-  measure: test {
+  measure: test2 {
     type: number
-    sql: ${age} ;;
+    sql: ${age}*2 ;;
+  }
+  measure: test3 {
+    type: number
+    sql: ${age}*3 ;;
+  }
+
+  measure: dinamyc_measure {
+    type: number
+    sql:  ;;
   }
 
   # ----- Sets of fields for drilling ------

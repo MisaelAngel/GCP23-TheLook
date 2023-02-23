@@ -113,6 +113,18 @@ explore: orders {
     sql_on: ${orders.user_id} = ${users.id} ;;
     relationship: many_to_one
   }
+  aggregate_table: rollup__users_id__users_state {
+    query: {
+      dimensions: [users.id, users.state]
+      measures: [count, users.count]
+      timezone: "America/Los_Angeles"
+    }
+
+    materialization: {
+      datagroup_trigger: mtrmisathelook_default_datagroup
+    }
+  }
+
 }
 
 explore: order_items {
