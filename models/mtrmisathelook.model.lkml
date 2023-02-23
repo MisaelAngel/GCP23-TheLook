@@ -113,7 +113,7 @@ explore: orders {
     sql_on: ${orders.user_id} = ${users.id} ;;
     relationship: many_to_one
   }
-  aggregate_table: rollup__users_id__users_state {
+  aggregate_table: agg_table_test {
     query: {
       dimensions: [users.id, users.state]
       measures: [count, users.count]
